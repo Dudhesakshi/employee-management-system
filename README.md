@@ -233,22 +233,9 @@ postman/
 ```bash
 git clone https://github.com/Dudhesakshi/employee-management-system.git
 ```
-
-## Configure Database
-
-Update:
-
-```
-src/main/resources/application.properties
-```
-
-Example:
-
-```properties
 spring.datasource.url=jdbc:mysql://localhost:3306/employee_management_db
 spring.datasource.username=root
 spring.datasource.password=your_password
-```
 
 ## Run Application
 
