@@ -1,4 +1,4 @@
-# Employee Management System
+# 👨‍💼 Employee Management System
 
 A secure **Employee Management System** developed using **Java, Spring Boot, Spring Security, JWT Authentication, Hibernate, JPA, and MySQL**.
 
