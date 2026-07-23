@@ -223,9 +223,6 @@ Registration of a new user using authentication API.
 
 ```
 POST /auth/register
-```
-
-![Register API](screenshots/register.png)
 
 ---
 
@@ -237,8 +234,6 @@ Login API generates JWT token for secure API access.
 POST /auth/login
 ```
 
-![Login API](screenshots/login.png)
-
 ---
 
 ## 3. Create Employee API
@@ -248,8 +243,6 @@ Creating employee record using JWT authenticated request.
 ```
 POST /employees
 ```
-
-![Create Employee API](screenshots/create-employee.png)
 
 ---
 
@@ -261,7 +254,6 @@ Fetching employee records from MySQL database.
 GET /employees
 ```
 
-![Get Employees API](screenshots/get-employees.png)
 
 ---
 
