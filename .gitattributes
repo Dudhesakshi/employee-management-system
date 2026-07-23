@@ -1,0 +1,9 @@
+/mvnw text eol=lf
+*.cmd text eol=crlf
+target/
+.idea/
+*.iml
+.classpath
+.project
+.settings/
+*.log
