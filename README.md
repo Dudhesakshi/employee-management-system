@@ -102,6 +102,26 @@ mvn spring-boot:run
 
 4. Test APIs using Postman.
 
+
+# 📸 Screenshots
+
+## User Registration API
+
+![Register API](screenshots/register.png)
+
+## JWT Login API
+
+![Login API](screenshots/login.png)
+
+## Create Employee API
+
+![Create Employee](screenshots/create-employee.png)
+
+## Get Employees API
+
+![Get Employees](screenshots/get-employees.png)
+
+
 ## Author
 
 Sakshi Dudhe
