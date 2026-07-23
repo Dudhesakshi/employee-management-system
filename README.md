@@ -1,127 +1,335 @@
 # Employee Management System
 
-A Spring Boot based Employee Management System with JWT Authentication and Role-based security.
+A secure **Employee Management System** developed using **Java, Spring Boot, Spring Security, JWT Authentication, Hibernate, JPA, and MySQL**.
 
-## Features
+This project provides secure REST APIs for user authentication and complete employee management operations with JWT-based authorization.
 
-- User Registration
-- User Login with JWT Authentication
-- Secure REST APIs
-- Create Employee
-- View All Employees
-- View Employee By ID
-- Update Employee
-- Delete Employee
-- MySQL Database Integration
+---
 
-## Tech Stack
+# 🚀 Features
 
-### Backend
-- Java
-- Spring Boot
-- Spring Security
-- JWT Authentication
-- Hibernate / JPA
-- Maven
+## 🔐 Authentication & Security
 
-### Database
-- MySQL
+* User Registration
+* User Login
+* JWT Token Generation
+* JWT-based Authentication
+* Secure REST APIs using Spring Security
+* Password encryption using BCrypt
+* Stateless session management
 
-### Tools
-- IntelliJ IDEA / Eclipse
-- Postman
-- Git & GitHub
+---
 
-## API Endpoints
+## 👨‍💼 Employee Management
 
-### Authentication
+* Create Employee
+* View All Employees
+* View Employee By ID
+* Update Employee Details
+* Delete Employee
 
-POST
-/auth/register
+---
 
+# 🛠️ Tech Stack
 
-POST
+## Backend
 
-/auth/login
+* Java
+* Spring Boot
+* Spring Security
+* JWT Authentication
+* Hibernate
+* Spring Data JPA
+* Maven
 
+## Database
 
-### Employee APIs
+* MySQL
 
-GET
+## Tools
 
-/employees
+* IntelliJ IDEA
+* Postman
+* Git & GitHub
 
+---
 
-GET
+# 🏷️ Project Topics
 
-/employees/{id}
+```
+java
+spring-boot
+spring-security
+jwt
+hibernate
+jpa
+mysql
+rest-api
+backend-development
+```
 
+---
 
-POST
+# 📂 Project Structure
 
-/employees
+```
+employee-management-system
 
+src/main/java/com/assignment/employeemanagement
 
-PUT
+├── config
+│   └── SecurityConfig.java
+│
+├── controller
+│   ├── AuthController.java
+│   └── EmployeeController.java
+│
+├── dto
+│   └── RegisterRequest.java
+│
+├── entity
+│   ├── User.java
+│   └── Employee.java
+│
+├── repository
+│   ├── UserRepository.java
+│   └── EmployeeRepository.java
+│
+├── security
+│   ├── JwtAuthenticationFilter.java
+│   ├── JwtUtil.java
+│   └── CustomUserDetailsService.java
+│
+└── service
+    └── UserService.java
+```
 
-/employees/{id}
+---
 
+# 🔗 API Documentation
 
-DELETE
+## Authentication APIs
 
-/employees/{id}
+### 1. Register User
 
+**Endpoint**
 
-## Project Structure
+```
+POST /auth/register
+```
 
+Request:
 
-controller
-entity
-repository
-service
-security
-config
-dto
+```json
+{
+    "username": "sakshi",
+    "email": "sakshi@gmail.com",
+    "password": "123456"
+}
+```
 
+---
 
-## How to Run
+### 2. Login User
 
-1. Clone the repository
+**Endpoint**
 
-2. Configure MySQL database in:
+```
+POST /auth/login
+```
 
+Response:
 
-application.properties
+```json
+{
+    "token": "JWT_TOKEN"
+}
+```
 
+The generated JWT token is used to access secured employee APIs.
 
-3. Run the application:
+---
 
+# 👨‍💼 Employee APIs
 
-mvn spring-boot:run
+All employee APIs require JWT authentication.
 
+Add token in request header:
 
-4. Test APIs using Postman.
+```
+Authorization: Bearer <JWT_TOKEN>
+```
 
+---
 
-# 📸 Screenshots
+## Create Employee
 
-## User Registration API
+```
+POST /employees
+```
+
+Request:
+
+```json
+{
+    "name": "Rahul Sharma",
+    "email": "rahul@gmail.com",
+    "department": "IT",
+    "position": "Java Developer",
+    "salary": 50000,
+    "dateOfJoining": "2026-07-23"
+}
+```
+
+---
+
+## Get All Employees
+
+```
+GET /employees
+```
+
+---
+
+## Get Employee By ID
+
+```
+GET /employees/{id}
+```
+
+---
+
+## Update Employee
+
+```
+PUT /employees/{id}
+```
+
+---
+
+## Delete Employee
+
+```
+DELETE /employees/{id}
+```
+
+---
+
+# 📸 API Screenshots
+
+## 1. User Registration API
+
+Registration of a new user using authentication API.
+
+```
+POST /auth/register
+```
 
 ![Register API](screenshots/register.png)
 
-## JWT Login API
+---
+
+## 2. User Login & JWT Token Generation
+
+Login API generates JWT token for secure API access.
+
+```
+POST /auth/login
+```
 
 ![Login API](screenshots/login.png)
 
-## Create Employee API
+---
 
-![Create Employee](screenshots/create-employee.png)
+## 3. Create Employee API
 
-## Get Employees API
+Creating employee record using JWT authenticated request.
 
-![Get Employees](screenshots/get-employees.png)
+```
+POST /employees
+```
 
+![Create Employee API](screenshots/create-employee.png)
 
-## Author
+---
 
-Sakshi Dudhe
+## 4. Get All Employees API
+
+Fetching employee records from MySQL database.
+
+```
+GET /employees
+```
+
+![Get Employees API](screenshots/get-employees.png)
+
+---
+
+# ⚙️ How To Run The Project
+
+## 1. Clone Repository
+
+```bash
+git clone https://github.com/Dudhesakshi/employee-management-system.git
+```
+
+---
+
+## 2. Configure Database
+
+Update MySQL configuration in:
+
+```
+src/main/resources/application.properties
+```
+
+Example:
+
+```properties
+spring.datasource.url=jdbc:mysql://localhost:3306/employee_management_db
+spring.datasource.username=root
+spring.datasource.password=your_password
+```
+
+---
+
+## 3. Run Application
+
+Using Maven:
+
+```bash
+mvn spring-boot:run
+```
+
+Application runs on:
+
+```
+http://localhost:8080
+```
+
+---
+
+# 🧪 Testing
+
+APIs tested using:
+
+* Postman
+* JWT Bearer Authentication
+* MySQL Database Verification
+
+Verified:
+
+✅ User Registration
+✅ User Login
+✅ JWT Authentication
+✅ Employee CRUD Operations
+
+---
+
+# 👩‍💻 Author
+
+**Sakshi Dudhe**
+
+GitHub:
+
+https://github.com/Dudhesakshi
