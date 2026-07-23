@@ -2,13 +2,13 @@
 
 A secure Employee Management System developed using **Java, Spring Boot, Spring Security, JWT Authentication, Hibernate, JPA, and MySQL**.
 
-This project provides secure REST APIs for user authentication and complete employee management operations with JWT-based authorization, CRUD functionality, pagination, and sorting.
+This project provides secure REST APIs for user authentication and complete employee management operations with JWT-based authorization, CRUD operations, pagination, and sorting.
 
 ---
 
-# 🚀 Features
+## 🚀 Features
 
-## 🔐 Authentication & Security
+### 🔐 Authentication & Security
 
 - User Registration
 - User Login
@@ -18,9 +18,7 @@ This project provides secure REST APIs for user authentication and complete empl
 - Password Encryption using BCrypt
 - Stateless Session Management
 
----
-
-## 👨‍💼 Employee Management
+### 👨‍💼 Employee Management
 
 - Create Employee
 - View All Employees
@@ -28,38 +26,26 @@ This project provides secure REST APIs for user authentication and complete empl
 - Update Employee Details
 - Delete Employee
 
----
-
-## 📄 Pagination & Sorting
+### 📄 Pagination & Sorting
 
 Implemented pagination and sorting using Spring Data Pageable.
 
-Examples:
+Example:
 
-### Pagination
+```
+GET /employees?page=0&size=5&sortBy=name
+```
 
-
-GET /employees?page=0&size=5
-
-
-### Sorting
-
-
-GET /employees?sortBy=salary
-
-
-### Pagination + Sorting
-
-
-GET /employees?page=0&size=10&sortBy=name
-
+Supports:
+- Page number
+- Page size
+- Sorting by employee fields
 
 ---
 
 # 🛠️ Tech Stack
 
 ## Backend
-
 - Java
 - Spring Boot
 - Spring Security
@@ -69,11 +55,9 @@ GET /employees?page=0&size=10&sortBy=name
 - Maven
 
 ## Database
-
-- MySQL 8
+- MySQL
 
 ## Tools
-
 - IntelliJ IDEA
 - Postman
 - Git & GitHub
@@ -83,36 +67,36 @@ GET /employees?page=0&size=10&sortBy=name
 
 # 📂 Project Structure
 
-
+```
 src/main/java/com/assignment/employeemanagement
 
 ├── config
-│ └── SecurityConfig.java
+│   └── SecurityConfig.java
 │
 ├── controller
-│ ├── AuthController.java
-│ └── EmployeeController.java
+│   ├── AuthController.java
+│   └── EmployeeController.java
 │
 ├── dto
-│ └── RegisterRequest.java
+│   └── RegisterRequest.java
 │
 ├── entity
-│ ├── User.java
-│ └── Employee.java
+│   ├── User.java
+│   └── Employee.java
 │
 ├── repository
-│ ├── UserRepository.java
-│ └── EmployeeRepository.java
+│   ├── UserRepository.java
+│   └── EmployeeRepository.java
 │
 ├── security
-│ ├── JwtAuthenticationFilter.java
-│ ├── JwtUtil.java
-│ └── CustomUserDetailsService.java
+│   ├── JwtAuthenticationFilter.java
+│   ├── JwtUtil.java
+│   └── CustomUserDetailsService.java
 │
 └── service
-├── UserService.java
-└── EmployeeService.java
-
+    ├── UserService.java
+    └── EmployeeService.java
+```
 
 ---
 
@@ -122,9 +106,10 @@ src/main/java/com/assignment/employeemanagement
 
 ### Register User
 
-
-POST /auth/register
-
+**POST**
+```
+/auth/register
+```
 
 Request:
 
@@ -134,107 +119,168 @@ Request:
     "email": "sakshi@gmail.com",
     "password": "123456"
 }
-Login User
-POST /auth/login
+```
+
+---
+
+### Login User
+
+**POST**
+```
+/auth/login
+```
 
 Response:
 
+```json
 {
     "token": "JWT_TOKEN"
 }
+```
 
 Use the generated JWT token for accessing employee APIs.
 
-👨‍💼 Employee APIs
+---
+
+# 👨‍💼 Employee APIs
 
 All employee APIs require JWT Bearer Authentication.
 
 Header:
 
+```
 Authorization: Bearer <JWT_TOKEN>
-Create Employee
+```
+
+### Create Employee
+
+```
 POST /employees
-Get All Employees
+```
+
+### Get All Employees
+
+```
 GET /employees
+```
 
 Supports pagination and sorting.
 
 Example:
 
+```
 GET /employees?page=0&size=5&sortBy=name
-Get Employee By ID
+```
+
+### Get Employee By ID
+
+```
 GET /employees/{id}
-Update Employee
+```
+
+### Update Employee
+
+```
 PUT /employees/{id}
-Delete Employee
+```
+
+### Delete Employee
+
+```
 DELETE /employees/{id}
-🧪 Testing
+```
+
+---
+
+# 🧪 Testing
 
 Implemented and verified:
 
-✅ User Registration
-✅ User Login
-✅ JWT Authentication
-✅ Employee CRUD Operations
-✅ Pagination
-✅ Sorting
-✅ MySQL Database Integration
-✅ REST API Testing using Postman
-✅ Unit Testing using JUnit
+✅ User Registration  
+✅ User Login  
+✅ JWT Authentication  
+✅ Employee CRUD Operations  
+✅ Pagination  
+✅ Sorting  
+✅ MySQL Database Integration  
+✅ REST API Testing using Postman  
+✅ Unit Testing using JUnit  
 
-📦 Postman Collection
+---
+
+# 📦 Postman Collection
 
 Postman collection contains:
 
-Authentication APIs
-JWT Token Testing
-Employee CRUD APIs
-Pagination and Sorting APIs
+- Authentication APIs
+- JWT Token Testing
+- Employee CRUD APIs
+- Pagination and Sorting APIs
 
 Location:
 
+```
 postman/
  └── Employee-Management-System.postman_collection.json
-⚙️ How To Run The Project
-Clone Repository
+```
+
+---
+
+# ⚙️ How To Run The Project
+
+## Clone Repository
+
+```bash
 git clone https://github.com/Dudhesakshi/employee-management-system.git
-Configure Database
+```
+
+## Configure Database
 
 Update:
 
+```
 src/main/resources/application.properties
+```
 
 Example:
 
+```properties
 spring.datasource.url=jdbc:mysql://localhost:3306/employee_management_db
 spring.datasource.username=root
 spring.datasource.password=your_password
-Run Application
+```
+
+## Run Application
 
 Using Maven:
 
+```bash
 mvn spring-boot:run
+```
 
 Application runs on:
 
+```
 http://localhost:8080
-
+```
 
 ---
-📸 Screenshots
+
+# 📸 Screenshots
 
 Included API screenshots:
 
-User Registration
-User Login with JWT Token
-Create Employee
-Get Employees
-Pagination and Sorting Response
+- User Registration
+- User Login with JWT Token
+- Create Employee
+- Get Employees
+- Pagination and Sorting Response
 
+---
 
-👩‍💻 Author
+# 👩‍💻 Author
 
-Sakshi Dudhe
+**Sakshi Dudhe**
 
 GitHub:
 https://github.com/Dudhesakshi
